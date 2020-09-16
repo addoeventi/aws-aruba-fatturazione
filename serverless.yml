@@ -33,7 +33,13 @@ provider:
 
 # The `functions` block defines what code to deploy
 functions:
-
+  createInvoice:
+    handler: functions/aruba-fatturazione/createInvoice.handler
+    events:
+      - http:
+          path: aruba/createInvoice
+          method: post
+          cors: true
   ## CASHBACK API
   # getCashbackBalance:
   #   handler: functions/cashback/getCashbackBalance.handler
