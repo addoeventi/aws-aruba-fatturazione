@@ -1,0 +1,57 @@
+{
+  "name": "aws-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "debug": "SET SLS_DEBUG=* && node --inspect %USERPROFILE%\\AppData\\Roaming\\npm\\node_modules\\serverless\\bin\\serverless offline -s dev",
+    "test": "node_modules/.bin/jest",
+    "test:coverage": "open coverage/lcov-report/index.html",
+    "eslint": "./node_modules/.bin/eslint ."
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "@hewmen/serverless-plugin-typescript": "^1.1.17",
+    "@types/aws-lambda": "^8.10.57",
+    "@types/mongodb": "^3.5.25",
+    "@types/mongoose": "^5.7.28",
+    "@types/node": "^14.0.14",
+    "babel-loader": "^8.1.0",
+    "cache-loader": "^4.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.0.1",
+    "fork-ts-checker-webpack-plugin": "^5.0.5",
+    "i": "^0.3.6",
+    "jest": "^20.0.4",
+    "lambda-tester": "^3.6.0",
+    "nock": "^9.0.13",
+    "npm": "^6.14.5",
+    "serverless": "^1.73.1",
+    "serverless-offline": "^6.4.0",
+    "serverless-plugin-optimize": "^4.1.4-rc.1",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-webpack": "^5.3.2",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "dependencies": {
+    "aws-sdk": "^2.709.0",
+    "axios": "^0.19.2",
+    "html-pdf": "^2.2.0",
+    "moment": "^2.27.0",
+    "mongodb": "^3.5.9",
+    "qrcode": "^1.4.4",
+    "reflect-metadata": "^0.1.13",
+    "stripe": "^8.66.0",
+    "tsyringe": "^4.3.0",
+    "typy": "^3.3.0"
+  }
+}

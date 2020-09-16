@@ -1,0 +1,58 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: service-name
+
+# Configuration variables
+custom:
+  secrets: ${file(secrets.json)}
+  
+plugins:
+  - '@hewmen/serverless-plugin-typescript'
+  - serverless-plugin-optimize
+  - serverless-offline
+
+package:
+  individually: true
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  # profile: personal
+  region: eu-west-3
+  memorySize: 256
+  timeout: 10
+  environment:
+    MONGODB_CONNECTION_STRING: ${self:custom.secrets.mongodb_connection_string} # MongoDbConnectionString
+
+# The `functions` block defines what code to deploy
+functions:
+
+  ## CASHBACK API
+  # getCashbackBalance:
+  #   handler: functions/cashback/getCashbackBalance.handler
+  #   events:
+  #     - http:
+  #         path: cashback
+  #         method: get
+  #         cors: true
+  # getMyCashbackBalance:
+  #   handler: functions/cashback/getMyCashbackBalance.handler
+  #   events:
+  #     - http:
+  #         path: cashback/me
+  #         method: get
+  #         cors: true
+  # updateCashback:
+  #   handler: functions/cashback/updateCashback.handler
+  #   events:
+  #     - http:
+  #         path: cashback/{user_id}
+  #         method: put
+  #         cors: true

@@ -1,0 +1,1 @@
+Here put all function/routes of resource
